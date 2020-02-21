@@ -1,5 +1,5 @@
-<h2>Title: <%= @book[:docs].first[:title] %></h2>
-<h2>Author: <%= @book[:docs].first[:author_name].first %></h2>
+<h2>Title: <%= @book.title %></h2>
+<h2>Author: <%= @book.author %></h2>
 
 <% @reviews.each do |review| %>
   <section class = "reviews">
