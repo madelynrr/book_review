@@ -1,7 +1,7 @@
-<h2>Title: <%= @book[:docs].first[:title] %></h2>
-<h2>Author: <%= @book[:docs].first[:author_name].first %></h2>
+<h2>Title: <%= book_results.book_title %></h2>
+<h2>Author: <%= book_results.book_author %></h2>
 
-<% @reviews.each do |review| %>
+<% review_results.reviews.each do |review| %>
   <section class = "reviews">
     <%= review %><p></p>
   </section>
