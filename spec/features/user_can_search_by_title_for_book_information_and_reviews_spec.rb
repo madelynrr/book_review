@@ -2,8 +2,19 @@ require 'rails_helper'
 
 RSpec.describe "as a user" do
   it "can enter a book title and get back the information and New York Times reviews for the book" do
-    
+    visit "/"
 
+    title = "the man who saw everything"
+
+    fill_in "title", with: title
+
+    click_button "Find Book"
+
+    expect(current_path).to eq("/search")
+    expect(page).to have_content("Title: The Man Who Saw Everything")
+    expect(page).to have_content("Author: Deborah Levy")
+    expect(page).to have_content("Genres: n/a")
+    expect(page).to have_css(".reviews", count: 2)
   end
 end
 
